@@ -26,6 +26,6 @@ import jakarta.ws.rs.ApplicationPath;
  * @see org.eclipse.jakarta.hello.FortuneResource
  */
 @ApplicationPath("rest")
-public class HelloApplication extends Application {
+public class FortuneApplication extends Application {
     // Needed to enable Jakarta REST and specify path.
 }

@@ -2,196 +2,279 @@
 
 /* Base styles */
 body {
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
-    color: #333;
+	font-family: Arial, sans-serif;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+	line-height: 1.6;
+	color: #333;
 }
 
-h1, h2, h3 {
-    color: #333;
+h1,
+h2,
+h3 {
+	color: #333;
 }
 
 a {
-    color: #4b88c2;
-    text-decoration: none;
+	color: #4b88c2;
+	text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Landing Page Styles */
 header {
-    text-align: center;
-    padding: 30px 0;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 30px;
+	text-align: center;
+	padding: 30px 0;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 30px;
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #4b88c2;
+	font-size: 2.5em;
+	margin-bottom: 10px;
+	color: #4b88c2;
 }
 
 .tagline {
-    font-size: 1.2em;
-    color: #666;
+	font-size: 1.2em;
+	color: #666;
 }
 
 .hero {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 60px;
-    gap: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: 60px;
+	gap: 30px;
 }
 
 .hero-content {
-    flex: 1;
-    min-width: 300px;
+	flex: 1;
+	min-width: 300px;
 }
 
 .fortune-image {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
+	flex: 1;
+	min-width: 300px;
+	text-align: center;
 }
 
 .fortune-image img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	max-width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button {
-    display: inline-block;
-    background-color: #4b88c2;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
-    margin-top: 15px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+	display: inline-block;
+	background-color: #4b88c2;
+	color: white;
+	padding: 12px 25px;
+	border-radius: 5px;
+	margin-top: 15px;
+	font-weight: bold;
+	transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #3a6fa0;
-    text-decoration: none;
+	background-color: #3a6fa0;
+	text-decoration: none;
 }
 
 .features {
-    margin-bottom: 60px;
+	margin-bottom: 60px;
 }
 
 .features h2 {
-    text-align: center;
-    margin-bottom: 30px;
+	text-align: center;
+	margin-bottom: 30px;
 }
 
 .feature-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	justify-content: center;
 }
 
 .feature-card {
-    flex: 1;
-    min-width: 250px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+	flex: 1;
+	min-width: 250px;
+	background-color: #f8f9fa;
+	border-radius: 8px;
+	padding: 25px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .feature-card h3 {
-    color: #4b88c2;
-    margin-top: 0;
+	color: #4b88c2;
+	margin-top: 0;
 }
 
 .cta {
-    background-color: #f0f8ff;
-    text-align: center;
-    padding: 40px;
-    border-radius: 8px;
-    margin-bottom: 40px;
+	background-color: #f0f8ff;
+	text-align: center;
+	padding: 40px;
+	border-radius: 8px;
+	margin-bottom: 40px;
 }
 
 footer {
-    text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid #eee;
-    color: #777;
-    font-size: 0.9em;
+	text-align: center;
+	padding: 20px 0;
+	border-top: 1px solid #eee;
+	color: #777;
+	font-size: 0.9em;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-    }
-    
-    .hero-content, .fortune-image {
-        flex: 100%;
-    }
+	.hero {
+		flex-direction: column;
+	}
+
+	.hero-content,
+	.fortune-image {
+		flex: 100%;
+	}
 }
 
 /* Fortune Cookie Form Styles */
 .fortune-form {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
+	background-color: #f8f9fa;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	margin-bottom: 20px;
 }
 
 textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    min-height: 100px;
-    margin-bottom: 10px;
+	width: 90%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	min-height: 100px;
+	margin-bottom: 10px;
 }
 
 button {
-    background-color: #4b88c2;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
+	background-color: #4b88c2;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 button:hover {
-    background-color: #3a6fa0;
-}
-
-.fortune-result {
-    background-color: #fff8e1;
-    border-left: 4px solid #ffca28;
-    padding: 15px;
-    margin: 20px 0;
-    display: none;
+	background-color: #3a6fa0;
 }
 
 .loading {
-    text-align: center;
-    margin: 20px 0;
-    display: none;
+	text-align: center;
+	margin: 20px 0;
+	display: none;
 }
 
 a.home-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #4b88c2;
+	display: inline-block;
+	margin-top: 20px;
+	color: #4b88c2;
+}
+
+/* Simplified Fortune Cookie Display */
+.fortune-cookie-container {
+    position: relative;
+    width: 300px;
+    max-width: 100%;
+    margin: 30px auto;
+}
+
+.fortune-cookie {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Fortune message display with animation effects */
+.fortune-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    width: 80%;
+    max-width: 250px;
+    background: #fffdf7; /* Slightly off-white paper-like background */
+    border: 1px solid #e0ddd0;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    z-index: 2; /* Position above the cookie */
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy animation effect */
+    pointer-events: none; /* Let clicks pass through initially */
+}
+
+/* Paper texture effect for the fortune message */
+.fortune-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 8px 8px;
+    z-index: -1;
+}
+
+/* Paper fold corner effect */
+.fortune-message::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.05) 50%);
+    z-index: 1;
+}
+
+/* Visible state for the message */
+.fortune-message.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto; /* Allow interaction when visible */
+}
+
+/* Add overlay effect */
+.fortune-cookie.dimmed::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    z-index: 2;
 }
