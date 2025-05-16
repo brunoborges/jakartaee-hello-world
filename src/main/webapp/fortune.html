@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Cookie Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Fortune Cookie Generator</h1>
+    <p>Share your thoughts and receive a fortune cookie message generated just for you!</p>
+    
+    <div class="fortune-form">
+        <form id="thoughtForm">
+            <label for="userThoughts">Enter your thoughts:</label>
+            <textarea id="userThoughts" name="userThoughts" required 
+                placeholder="Type your thoughts here..."></textarea>
+            <button type="submit">Generate Fortune</button>
+        </form>
+    </div>
+    
+    <div class="loading" id="loadingIndicator">
+        <p>Creating your fortune cookie wisdom...</p>
+    </div>
+    
+    <div class="fortune-result" id="fortuneResult">
+        <h3>Your Fortune Cookie says:</h3>
+        <p id="fortuneText"></p>
+    </div>
+    
+    <a href="index.html" class="home-link">Return to Home</a>
+
+    <script>
+        document.getElementById('thoughtForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get user input
+            const thoughts = document.getElementById('userThoughts').value;
+            
+            // Show loading indicator
+            document.getElementById('loadingIndicator').style.display = 'block';
+            document.getElementById('fortuneResult').style.display = 'none';
+            
+            try {
+                // Send request to our backend
+                const response = await fetch('rest/fortune', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ thoughts: thoughts })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                
+                const data = await response.json();
+                
+                // Display the fortune
+                document.getElementById('fortuneText').textContent = data.fortune;
+                document.getElementById('fortuneResult').style.display = 'block';
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('fortuneText').textContent = 
+                    'Sorry, we encountered an error while generating your fortune. Please try again.';
+                document.getElementById('fortuneResult').style.display = 'block';
+            } finally {
+                // Hide loading indicator
+                document.getElementById('loadingIndicator').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

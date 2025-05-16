@@ -1,0 +1,197 @@
+/* Common styles for the Fortune Cookie Generator application */
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+a {
+    color: #4b88c2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Landing Page Styles */
+header {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #4b88c2;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 30px;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.fortune-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.fortune-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #4b88c2;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #3a6fa0;
+    text-decoration: none;
+}
+
+.features {
+    margin-bottom: 60px;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.feature-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card h3 {
+    color: #4b88c2;
+    margin-top: 0;
+}
+
+.cta {
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero-content, .fortune-image {
+        flex: 100%;
+    }
+}
+
+/* Fortune Cookie Form Styles */
+.fortune-form {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 100px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4b88c2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3a6fa0;
+}
+
+.fortune-result {
+    background-color: #fff8e1;
+    border-left: 4px solid #ffca28;
+    padding: 15px;
+    margin: 20px 0;
+    display: none;
+}
+
+.loading {
+    text-align: center;
+    margin: 20px 0;
+    display: none;
+}
+
+a.home-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4b88c2;
+}
