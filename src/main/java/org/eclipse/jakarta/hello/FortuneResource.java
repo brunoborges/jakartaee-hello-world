@@ -16,12 +16,42 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * RESTful resource for generating fortune cookie messages based on user input.
+ * <p>
+ * This class provides a REST endpoint that accepts user thoughts and generates
+ * personalized fortune cookie messages either through OpenAI's GPT model or
+ * using predefined mock responses when OpenAI integration is not available.
+ * </p>
+ * 
+ * @author Fortune Cookie Generator Team
+ * @version 1.0
+ * @since May 2025
+ */
 @Path("fortune")
 public class FortuneResource {
 
-    // This would typically come from a configuration file or environment variable
+    /**
+     * OpenAI API key retrieved from environment variables.
+     * This key is required for connecting to OpenAI's services.
+     * If not provided, the application will fall back to using mock fortunes.
+     */
     private static final String OPENAI_API_KEY = System.getenv("OPENAI_API_KEY");
 
+    /**
+     * Processes user thoughts and generates a personalized fortune cookie message.
+     * <p>
+     * This endpoint accepts a JSON object containing the user's thoughts,
+     * validates the input, and then either:
+     * <ul>
+     *   <li>Generates a fortune using OpenAI if an API key is available</li>
+     *   <li>Returns a mock fortune if no API key is configured</li>
+     * </ul>
+     * </p>
+     *
+     * @param request The ThoughtsRequest object containing user input
+     * @return Response containing the generated fortune cookie message or an error
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -48,6 +78,17 @@ public class FortuneResource {
         }
     }
 
+    /**
+     * Generates a fortune cookie message using OpenAI's GPT model.
+     * <p>
+     * This method creates a prompt for the AI model that instructs it to generate
+     * a fortune cookie message based on the user's thoughts. The prompt is designed
+     * to produce responses that are concise and styled like traditional fortune cookies.
+     * </p>
+     *
+     * @param thoughts The user's thoughts or input text
+     * @return A generated fortune cookie message
+     */
     private String generateFortuneWithOpenAI(String thoughts) {
         OpenAiService service = new OpenAiService(OPENAI_API_KEY);
         
@@ -68,6 +109,17 @@ public class FortuneResource {
                 .getChoices().get(0).getMessage().getContent().trim();
     }
     
+    /**
+     * Provides a predefined fortune cookie message when OpenAI integration is unavailable.
+     * <p>
+     * This method selects one of several predefined fortune messages based on a hash
+     * of the user's input, ensuring that the same input consistently produces the same
+     * fortune while still providing variety across different inputs.
+     * </p>
+     *
+     * @param thoughts The user's thoughts or input text
+     * @return A mock fortune cookie message
+     */
     private String getMockFortune(String thoughts) {
         // Simple mock fortunes for when the API key isn't available
         String[] mockFortunes = {
@@ -83,12 +135,24 @@ public class FortuneResource {
         return mockFortunes[index];
     }
     
+    /**
+     * Creates a JSON response object containing the generated fortune.
+     *
+     * @param fortune The fortune cookie message
+     * @return A Map that will be serialized to JSON by the JAX-RS runtime
+     */
     private Map<String, Object> createFortuneResponse(String fortune) {
         Map<String, Object> response = new HashMap<>();
         response.put("fortune", fortune);
         return response;
     }
     
+    /**
+     * Creates a JSON error response object.
+     *
+     * @param errorMessage The error message
+     * @return A Map that will be serialized to JSON by the JAX-RS runtime
+     */
     private Map<String, Object> createErrorResponse(String errorMessage) {
         Map<String, Object> response = new HashMap<>();
         response.put("error", errorMessage);
