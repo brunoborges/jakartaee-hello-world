@@ -2,13 +2,12 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
   schedule:
     # Runs at 2:00 AM UTC every day (daily build)
     - cron: '0 2 * * *'
-  # Allow manual triggering of the workflow
   workflow_dispatch:
 
 jobs:
@@ -26,10 +25,4 @@ jobs:
         cache: maven
     
     - name: Build with Maven
-      run: ./mvnw clean package
-      
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: jakartaee-hello-world
-        path: target/jakartaee-hello-world.war
+      run: ./mvnw verify
